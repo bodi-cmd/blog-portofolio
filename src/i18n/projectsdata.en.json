@@ -1,0 +1,82 @@
+[
+	{
+		"display": true,
+		"id": "mips",
+		"title": "MIPS emulator",
+		"summary": "MIPS is a highly scalable processor architecture that uses the RISC instruction set. This application simulates such a processor, running machine code directly in the browser. After loading and compiling assembly code into binary instructions, you can step through its execution.",
+		"link": "https://bodi-cmd.github.io/mips-simulator/",
+		"image": "./renders/procesor.webp",
+		"tags": ["JS", "Computer Architecture"],
+		"date": "June 2022"
+	},
+	{
+		"display": true,
+		"id": "teams_clone",
+		"title": "Megasoft Groups",
+		"summary": "Nowadays, more and more companies and educational institutions are turning to online communication solutions. Megasoft Groups is an app similar to Microsoft Teams, where users can create and evaluate tasks, upload files, and communicate with others in real time.",
+		"link": "https://ms-groups.herokuapp.com/",
+		"image": "./renders/teams.webp",
+		"tags": ["JS", "SCSS", "React", "Java", "Springboot", "MySQL"],
+		"date": "December 2022"
+	},
+	{
+		"display": true,
+		"id": "auto_chess",
+		"title": "AutoChess",
+		"summary": "AutoChess is an innovative platform that brings to life a robotic chessboard capable of simulating a real opponent. The project integrates electronics, programming, and mechanics to offer an interactive experience, demonstrating the practical application of embedded technologies and rapid prototyping.",
+		"link": "",
+		"image": "./renders/sah0000.webp",
+		"tags": ["C", "Arduino", "Python", "3D Printing", "Embedded"],
+		"date": "May 2019"
+	},
+	{
+		"display": false,
+		"id": "AES",
+		"title": "AES Encryption",
+		"summary": "<i>Advanced Encryption Standard</i> is the worldwide standard for encryption. The algorithm groups data into 128-bit blocks, then applies mathematical operations on the GF(2^8) ring, such as value swapping, row permutation, matrix multiplication, and the logical exclusive or (<i>XOR</i>) operation.",
+		"link": "",
+		"image": "./renders/laptop_aes.webp",
+		"tags": ["C/C++"],
+		"date": "July 2021"
+	},
+	{
+		"display": false,
+		"id": "the_hunter_master",
+		"title": "The Hunter Master!",
+		"summary": "<i>The Hunter Master!</i> is a game for Android phones. The goal is to efficiently hunt as many animals as possible, collect money, and upgrade as many bonuses as you can.",
+		"link": "",
+		"image": "./renders/thehuntermaster.webp",
+		"tags": ["C#", "Unity"],
+		"date": "July 2018"
+	},
+	{
+		"display": false,
+		"id": "medapp",
+		"title": "MedApp",
+		"summary": "Most people suffer from conditions that require certain treatments. But what if you need medicine from the pharmacy and can't leave home because you're in quarantine? The <i>MedApp</i> project aims to connect patients, doctors, and couriers. You describe your symptoms online to a doctor, then receive a prescription you can order to your home directly from the app.",
+		"link": "",
+		"image": "./renders/laptop_medapp.webp",
+		"tags": ["NodeJS", "SQL", "Bcrypt", "PassportAuth", "Express", "ejs"],
+		"date": "November 2020"
+	},
+	{
+		"display": false,
+		"id": "chain_up",
+		"title": "Chain Up!",
+		"summary": "Stack as many boxes as you can without dropping them. Sounds simple? Just try! <i>Chain Up!</i> is a game made for Android that will put your reflexes to the test.",
+		"link": "",
+		"image": "./renders/chainup.webp",
+		"tags": ["C#", "Unity"],
+		"date": "April 2018"
+	},
+	{
+		"display": false,
+		"id": "wall_breaker",
+		"title": "Wall Breaker",
+		"summary": "Do you like infinite runner games? Then <i>Wall Breaker</i> is exactly what you were looking for. Break one of the four wall blocks to make way for the comet. Collect points and unlock all available colors.",
+		"link": "",
+		"image": "./renders/wallbreaker.webp",
+		"tags": ["C#", "Unity"],
+		"date": "December 2017"
+	}
+]

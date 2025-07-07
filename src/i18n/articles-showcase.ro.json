@@ -1,0 +1,24 @@
+[
+	{
+		"display": true,
+		"id": "macro_kiki",
+		"title": "MacroKIKI",
+		"summary": "MacroKIKI este un o tastatura de mici dimensiuni, asemanatoare cu un numpad, care poate fi configurata sa ruleze orice comanda rapida sau chiar script. Poate fi programata cu ajutorul unei interfete grafice web, pentru a putea fi usor de utilizat.",
+		"github": "https://github.com/bodi-cmd/macro-kiki",
+		"article": "https://github.com/bodi-cmd/macro-kiki",
+		"image": "./renders/macro-kiki.webp",
+		"tags": ["C++", "JS", "3D Printing", "Embedded"],
+		"date": "June 2025"
+	},
+	{
+		"display": true,
+		"id": "elmockpit",
+		"title": "ELMockpit",
+		"summary": "ELMockpit este un dispozitiv destinat pasionatilor auto, care pune la dispozitie soferilor un set de informatii aditionale despre starea autoturismelor, precum temperatura uleiului, cronometrare 0-100Km/h si valorile in timp real ale altor senzori. Acesta se conecteaza la o interfata OBD II bluetooth, precum ELM327.",
+		"github": "https://github.com/bodi-cmd/macro-kiki",
+		"article": "https://github.com/bodi-cmd/macro-kiki",
+		"image": "./renders/elmduino.webp",
+		"tags": ["C++", "3D Printing", "Embedded"],
+		"date": "March 2025"
+	}
+]

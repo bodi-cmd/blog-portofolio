@@ -1,0 +1,118 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+*,
+::after,
+::before,
+::backdrop,
+::file-selector-button {
+	margin: 0;
+	padding: 0;
+	color: var(--text);
+}
+
+:root {
+	--primary: #ff6a00;
+	--spacing: 4px;
+	--color-structure-elements: #0d0d0d;
+	--color-secondary: #342e8a;
+	--color-app-bg: #181818;
+	--text-shadow: #5f59b1;
+	--text: #e8e8e8;
+	font-family: 'montserrat';
+}
+
+.section {
+	padding: 64px;
+	max-width: 1360px;
+	margin: auto;
+}
+
+.section .page-image {
+	width: 100%;
+	object-fit: contain;
+}
+
+.section .title {
+	margin-bottom: 48px;
+}
+
+.section > .flex {
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	flex-wrap: wrap;
+}
+
+.section > .flex > .content {
+	width: 50%;
+}
+
+.section h1 {
+	color: var(--text);
+	text-shadow: -5px 0 0 var(--text-shadow);
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+.section h2 {
+	color: var(--text);
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+.section p {
+	color: var(--text);
+	font-size: 24px;
+	margin-bottom: 32px;
+}
+
+body {
+	background-color: var(--color-app-bg);
+}
+
+.article-link {
+	width: 32px;
+	height: 32px;
+	fill: var(--primary);
+	cursor: pointer;
+
+	&:hover {
+		fill: white;
+	}
+}
+.zig-zag {
+	flex-direction: row-reverse;
+}
+.content img {
+	width: 480px;
+}
+.content .date {
+	font-weight: 300;
+	font-size: 1rem;
+}
+.bullets-row {
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	gap: 1rem;
+	flex-wrap: wrap;
+	.bullet {
+		font-size: 1rem;
+	}
+}
+
+@media (max-width: 924px) {
+	.section {
+		height: unset;
+		padding: 24px;
+	}
+	.section p {
+		font-size: 16px;
+	}
+	.section > .flex > .content {
+		width: 100%;
+		text-align: justify;
+	}
+}

@@ -1,0 +1,58 @@
+{
+	"greetings": {
+		"hello": "salut, sunt"
+	},
+	"name": "Bogdan Barbu",
+	"profession": {
+		"main": "inginer software",
+		"secondary": "pasionat de sisteme embedded"
+	},
+	"resume": {
+		"get": "Descarcă CV"
+	},
+	"about": {
+		"me": {
+			"title": "Despre mine",
+			"text": {
+				"p1": "Sunt un inginer software pasionat, cu un accent puternic pe proiectarea de sisteme, imprimare 3D și sisteme embedded. Îmi place să rezolv probleme complexe și să aduc ideile la viață prin cod și hardware.",
+				"p2": "De la construirea de aplicații web și proiectarea de firmware personalizat pentru microcontrolere, până la realizarea de prototipuri prin imprimare 3D, iubesc să creez soluții inovatoare care îmbină lumea digitală cu cea fizică."
+			}
+		}
+	},
+	"customers": {
+		"title": "Clienți pe termen lung",
+		"cruze": {
+			"description": "Cruze este o aplicație care conectează colegii ajutându-i să descopere naveta fiecăruia, făcând mai ușor partajul drumurilor către și de la serviciu. Cu Cruze poți găsi colegi de drum, economisi timp, reduce costurile și contribui la o rutină zilnică mai sustenabilă.",
+			"bullets": {
+				"system_design": "System Design",
+				"backend": "Backend",
+				"deploy": "Deploy"
+			}
+		},
+		"biotweak": {
+			"description": "BioTweak te ajută să descoperi obiceiuri mici și plăcute care îți îmbunătățesc starea de bine. Este vorba despre pași mici făcuți zilnic pentru a te simți mai sănătos, fără presiune — doar schimbări sustenabile și plăcute.",
+			"bullets": {
+				"system_design": "System Design",
+				"backend": "Backend",
+				"deploy": "Deploy"
+			}
+		},
+		"creativemotion": {
+			"description": " este o agenție digitală specializată în soluții web și mobile inovatoare. Ei ajută afacerile să crească prin software personalizat, site-uri atractive și experiențe digitale de impact adaptate fiecărui client.",
+			"bullets": {
+				"frontend": "Frontend",
+				"backend": "Backend"
+			}
+		}
+	},
+	"projects": {
+		"title": "Articole blog",
+		"readmore": "Citeste mai mult",
+		"finished": "finalizat în",
+		"used": "utilizat"
+	},
+	"contact": {
+		"title": "Contactează-mă...",
+		"description": "Dacă îți place munca mea, nu ezita să mă contactezi. Sunt mereu deschis la discuții despre proiecte noi, idei creative sau oportunități de a face parte din viziunea ta. Hai să colaborăm pentru a transforma conceptele tale în soluții inovatoare și eficiente."
+	}
+}

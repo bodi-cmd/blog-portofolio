@@ -1,0 +1,58 @@
+{
+	"greetings": {
+		"hello": "hello, I'm"
+	},
+	"name": "Bogdan Barbu",
+	"profession": {
+		"main": "software engineer",
+		"secondary": "embedded systems hobbyist"
+	},
+	"resume": {
+		"get": "Get My Resume"
+	},
+	"about": {
+		"me": {
+			"title": "About me",
+			"text": {
+				"p1": "I'm a passionate Software Engineer with a strong focus on system design, 3D printing, and embedded systems. I thrive on solving complex problems and bringing ideas to life through code and hardware.",
+				"p2": "From building web applications and designing custom firmware for microcontrollers, to crafting prototypes by 3D printing, I love creating innovative solutions that blend digital and physical worlds."
+			}
+		}
+	},
+	"customers": {
+		"title": "Long-Term Customers",
+		"cruze": {
+			"description": "Cruze is an app that connects colleagues by helping them discover each other's commutes, making it easier to share rides to and from work. With Cruze, you can find fellow commuters, save time, reduce costs, and contribute to a more sustainable daily routine.",
+			"bullets": {
+				"system_design": "System Design",
+				"backend": "Backend",
+				"deploy": "Deploy"
+			}
+		},
+		"biotweak": {
+			"description": "BioTweak helps you discover small, enjoyable habits that improve your well-being. It's about taking tiny steps every day to feel healthier, without the pressure — just fun, sustainable changes.",
+			"bullets": {
+				"system_design": "System Design",
+				"backend": "Backend",
+				"deploy": "Deploy"
+			}
+		},
+		"creativemotion": {
+			"description": " is a digital agency specializing in innovative web and mobile solutions. They help businesses grow by delivering custom software, engaging websites, and impactful digital experiences tailored to each client's needs.",
+			"bullets": {
+				"frontend": "Frontend",
+				"backend": "Backend"
+			}
+		}
+	},
+	"projects": {
+		"title": "Blog articles",
+		"readmore": "Read more",
+		"finished": "finished in",
+		"used": "used"
+	},
+	"contact": {
+		"title": "Get in touch...",
+		"description": "If you like my work, don't hesitate to contact me. I am always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Let's collaborate to bring your concepts to life with innovative and effective solutions."
+	}
+}
