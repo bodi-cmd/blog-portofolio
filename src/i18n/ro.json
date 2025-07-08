@@ -19,7 +19,7 @@
 		"me": {
 			"title": "Despre mine",
 			"text": {
-				"p1": "Sunt un inginer software pasionat, cu un interes puternic pe proiectarea de sisteme, imprimare 3D și sisteme embedded. Îmi place să rezolv probleme complexe și să aduc ideile la viață prin cod și hardware.",
+				"p1": "Sunt un inginer software pasionat de proiectarea sistemelor, imprimare 3D și aplicații embedded. Îmi place să rezolv probleme complexe și să aduc ideile la viață prin cod și hardware.",
 				"p2": "De la construirea de aplicații web și proiectarea de firmware pentru microcontrolere, până la realizarea de prototipuri prin imprimare 3D, iubesc să creez soluții inovatoare care îmbină lumea digitală cu cea fizică."
 			}
 		}
