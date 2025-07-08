@@ -1,4 +1,9 @@
 {
+	"navigation": {
+		"home": "Home",
+		"blog": "Blog",
+		"projects": "Project"
+	},
 	"greetings": {
 		"hello": "hello, I'm"
 	},
@@ -50,6 +55,9 @@
 		"readmore": "Read more",
 		"finished": "finished in",
 		"used": "used"
+	},
+	"archive": {
+		"title": "Projects archive"
 	},
 	"contact": {
 		"title": "Get in touch...",

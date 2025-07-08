@@ -1,13 +1,13 @@
 <script>
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
-	import { locale } from 'svelte-i18n';
+	import { locale, _ } from 'svelte-i18n';
 	import { get } from 'svelte/store';
 
 	const tabs = [
-		{ name: 'Home', url: '/' },
-		{ name: 'Blog', url: '/articles' },
-		{ name: 'Projects', url: '/projects' }
+		{ name: 'navigation.home', url: '/' },
+		{ name: 'navigation.blog', url: '/articles' },
+		{ name: 'navigation.projects', url: '/projects' }
 	];
 </script>
 
@@ -22,7 +22,7 @@
 				<a
 					class="flex h-full cursor-pointer items-center p-4 text-center no-underline hover:bg-gray-700"
 					class:bg-gray-800={$page.url.pathname === tab.url}
-					href={tab.url}>{tab.name}</a
+					href={tab.url}>{$_(tab.name)}</a
 				>
 			</li>
 		{/each}

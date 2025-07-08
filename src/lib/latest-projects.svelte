@@ -11,7 +11,7 @@
 </script>
 
 <div class="section">
-	<h1 class="title">Projects archive</h1>
+	<h1 class="title">{$_('archive.title')}</h1>
 	{#each projects.filter(({ display }) => display) as project, i}
 		<ProjectCard {project} invertFlex={i % 2} />
 	{/each}
