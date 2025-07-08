@@ -87,6 +87,7 @@ body {
 }
 .content img {
 	width: 480px;
+	margin-bottom: 2rem;
 }
 .content .date {
 	font-weight: 300;
