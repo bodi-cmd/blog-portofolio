@@ -3,6 +3,7 @@
 	export let invertFlex = false;
 
 	import { _, locale, addMessages } from 'svelte-i18n';
+	import { base } from '$app/paths';
 </script>
 
 <div class="flex {invertFlex ? 'zig-zag' : ''} mb-[10rem]">
