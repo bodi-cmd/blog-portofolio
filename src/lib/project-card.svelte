@@ -45,7 +45,7 @@
 		<p>
 			{@html project.summary}
 			{#if project.article}
-				<a class="text-primary" href="{base}/project.article">{$_('projects.readmore')}...</a>
+				<a class="text-primary" href="{base}/{project.article}">{$_('projects.readmore')}...</a>
 			{/if}
 		</p>
 		<div class="date">{$_('projects.finished')} {project.date},</div>
