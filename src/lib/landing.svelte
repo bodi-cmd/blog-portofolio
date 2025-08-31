@@ -4,6 +4,7 @@
 	import { locale } from 'svelte-i18n';
 	import { get } from 'svelte/store';
 	import { _ } from 'svelte-i18n';
+	import { base } from '$app/paths';
 </script>
 
 <div class="relative flex h-screen w-full items-center">
@@ -37,7 +38,7 @@
 		<div class="hero-actions">
 			<a
 				target="_blank"
-				href="/Bogdan Barbu CV 2025.pdf"
+				href="{base}/Bogdan Barbu CV 2025.pdf"
 				class="cursor-pointer rounded-xl border-2 border-solid border-primary p-2 font-semibold text-primary hover:shadow-xl"
 				>{$_('resume.get')}</a
 			>
