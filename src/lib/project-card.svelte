@@ -15,7 +15,7 @@
 				{project.title}
 			</h2>
 			{#if project.article}
-				<a href={project.article} aria-label="article link">
+				<a href="{base}/{project.article}" aria-label="article link">
 					<svg
 						class="article-link"
 						xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +44,7 @@
 		<p>
 			{@html project.summary}
 			{#if project.article}
-				<a class="text-primary" href={project.article}>{$_('projects.readmore')}...</a>
+				<a class="text-primary" href="{base}/project.article">{$_('projects.readmore')}...</a>
 			{/if}
 		</p>
 		<div class="date">{$_('projects.finished')} {project.date},</div>
