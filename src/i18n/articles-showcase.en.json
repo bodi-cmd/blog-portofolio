@@ -16,7 +16,7 @@
 		"title": "ELMockpit",
 		"summary": "ELMockpit is a device for car enthusiasts, providing drivers with additional information about their vehicles, such as oil temperature, 0-100Km/h timing, and real-time sensor values. It connects to a Bluetooth OBD II interface, like the ELM327.",
 		"github": "https://github.com/bodi-cmd/macro-kiki",
-		"article": "https://github.com/bodi-cmd/macro-kiki",
+		"article": "",
 		"image": "./renders/elmduino.webp",
 		"tags": ["C++", "3D Printing", "Embedded"],
 		"date": "March 2025"

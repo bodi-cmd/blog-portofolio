@@ -16,7 +16,7 @@
 		"title": "ELMockpit",
 		"summary": "ELMockpit este un dispozitiv destinat pasionatilor auto, care pune la dispozitie soferilor un set de informatii aditionale despre starea autoturismelor, precum temperatura uleiului, cronometrare 0-100Km/h si valorile in timp real ale altor senzori. Acesta se conecteaza la o interfata OBD II bluetooth, precum ELM327.",
 		"github": "https://github.com/bodi-cmd/macro-kiki",
-		"article": "https://github.com/bodi-cmd/macro-kiki",
+		"article": "",
 		"image": "./renders/elmduino.webp",
 		"tags": ["C++", "3D Printing", "Embedded"],
 		"date": "March 2025"
