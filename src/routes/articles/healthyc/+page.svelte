@@ -4,6 +4,7 @@
 	import ro from './i18n/ro.json';
 	import en from './i18n/en.json';
 	import { _setDictionary } from '../../+layout';
+	import { base } from '$app/paths';
 
 	let projects = [];
 	locale.subscribe((lang) => {
@@ -57,24 +58,24 @@
 
 			<h2 class="subtitle">{$_('healthyc.casing_title')}</h2>
 			<p>{$_('healthyc.casing_text')}</p>
-			<Gallery images={['/projects/hltc/creo1.png', '/projects/hltc/creo2.png']} />
+			<Gallery images={[`${base}/projects/hltc/creo1.png`, `${base}/projects/hltc/creo2.png`]} />
 
 			<h2 class="subtitle">{$_('healthyc.powering_title')}</h2>
 			<p>{$_('healthyc.powering_text')}</p>
-			<Gallery images={['/projects/hltc/pic6.jpeg']} />
+			<Gallery images={[`${base}/projects/hltc/pic6.jpeg`]} />
 
 			<h2 class="subtitle">{$_('healthyc.motherboard_title')}</h2>
 			<p>{$_('healthyc.motherboard_text')}</p>
 			<Gallery
 				images={[
-					'/projects/hltc/pic2.jpeg',
-					'/projects/hltc/pic4.jpeg',
-					'/projects/hltc/pic5.jpeg'
+					`${base}/projects/hltc/pic2.jpeg`,
+					`${base}/projects/hltc/pic4.jpeg`,
+					`${base}/projects/hltc/pic5.jpeg`
 				]}
 			/>
 			<h2 class="subtitle">{$_('healthyc.assembling_title')}</h2>
 			<p>{$_('healthyc.assembling_text')}</p>
-			<Gallery images={['/projects/hltc/pic1.jpeg', '/projects/hltc/pic3.jpeg']} />
+			<Gallery images={[`${base}/projects/hltc/pic1.jpeg`, `${base}/projects/hltc/pic3.jpeg`]} />
 		</div>
 	</div>
 </div>

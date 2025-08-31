@@ -6,6 +6,7 @@
 	import { _setDictionary } from '../../+layout';
 	import Prism from 'prismjs';
 	import { keypadDemoSnippet } from './snippets/arduino-snippets';
+	import { base } from '$app/paths';
 
 	let projects = [];
 	locale.subscribe((lang) => {
@@ -24,8 +25,8 @@
 			</p>
 			<Gallery
 				images={[
-					'/projects/macrokiki/macrokiki_whitebg.webp',
-					'/projects/macrokiki/macrokiki2_whitebg.webp'
+					`${base}/projects/macrokiki/macrokiki_whitebg.webp`,
+					`${base}/projects/macrokiki/macrokiki2_whitebg.webp`
 				]}
 			/>
 			<h2 class="subtitle">{$_('macroKiki.architecture.title')}</h2>
@@ -38,7 +39,7 @@
 			<p>
 				{$_('macroKiki.architecture.p3')}
 			</p>
-			<Gallery images={['/projects/macrokiki/ui.png']} />
+			<Gallery images={[`${base}/projects/macrokiki/ui.png`]} />
 			<h2 class="subtitle">{$_('macroKiki.keypad.title1')}</h2>
 			<p>
 				{$_('macroKiki.keypad.p1')}
@@ -55,7 +56,7 @@
 				{$_('macroKiki.keypad.p3')}
 			</p>
 			<div class="bg-white">
-				<Gallery images={['/projects/macrokiki/multiplexing.gif']} />
+				<Gallery images={[`${base}/projects/macrokiki/multiplexing.gif`]} />
 			</div>
 		</div>
 	</div>
