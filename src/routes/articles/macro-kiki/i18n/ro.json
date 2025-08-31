@@ -1,0 +1,19 @@
+{
+	"macroKiki": {
+		"title": "Macro KIKI",
+		"subtitle": "automatizeaza orice actiune de zi cu zi",
+		"intro1": "Rutina mea zilnică la job începe cu următorii pași: pornesc laptopul, introduc parola, deschid Jira, Teams și Gitlab, introduc alte parole, deschid mai multe ferestre de VSCode cu proiectele și rulez aplicațiile. Toate aceste taskuri pot fi automatizate printr-o simplă apăsare de buton, cu ajutorul tastaturii Macro KIKI, care permite configurarea unui număr nelimitat de comenzi și scripturi.",
+    "architecture": {
+      "title": "Prezentare de ansamblu",
+      "p1": "Primul pas a fost alegerea microcontroller-ului. Având deja experiență cu plăcuțele Arduino, am ales un Arduino Pro Micro, datorită funcționalității de emulare a dispozitivelor HID (se poate comporta ca un mouse sau tastatură, fără a fi nevoie de software adițional instalat pe dispozitivul țintă). Vom vedea pe parcurs că această alegere nu a fost cea mai bună, din cauza dimensiunii scăzute a memoriei.",
+      "p2": "Încă de la început am dorit ca utilizarea dispozitivului să fie cât mai prietenoasă, iar aspectul cât mai plăcut. Astfel, am adăugat un ecran OLED pentru interfață grafică, un encoder pentru navigarea în meniu și 12 butoane programabile.",
+      "p3": "Un alt criteriu important stabilit încă de la început a fost posibilitatea de a reprograma tastele fără a fi nevoie de instalarea unor drivere sau a unei aplicații dedicate. Soluția a fost implementarea unei platforme web accesibilă din browser, care generează un fișier de configurare. Acest fișier poate fi copiat pe un card microSD și introdus în tastatură. Un aspect important este faptul că toată generarea se realizează local, astfel că datele sensibile, cum ar fi parolele, nu părăsesc computerul."
+		},
+    "keypad": {
+      "title1": "Keypad",
+      "p1": "Primul pas a fost dezvoltarea unei biblioteci dedicate pentru numpad, deoarece bibliotecile existente fie consumau prea multă memorie, fie nu permiteau citirea simultană a mai multor taste.",
+      "p2": "După finalizarea bibliotecii, integrarea acesteia într-un proiect se realizează ușor, urmând exemplul de mai jos.",
+      "p3": "Pentru a utiliza eficient pinii microcontrollerului, am aplicat multiplexarea, o tehnică potrivită pentru butoane dispuse în matrice. Astfel, pentru o matrice cu L linii și C coloane, se folosesc C pini ca intrări și L pini ca ieșiri (sau invers). Microcontrollerul alimentează pe rând fiecare coloană și citește valorile liniilor. Principiul este ilustrat în animația următoare:"
+    }
+	}
+}

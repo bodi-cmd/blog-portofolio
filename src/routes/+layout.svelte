@@ -1,10 +1,9 @@
 <script>
-	export const prerender = true;
-
 	import '../app.css';
 	import Header from '$lib/header.svelte';
 	import ro from '../i18n/ro.json';
 	import en from '../i18n/en.json';
+	import { _setDictionary } from './+layout';
 	let { children } = $props();
 
 	import { init, getLocaleFromNavigator, locale, dictionary } from 'svelte-i18n';
@@ -14,8 +13,13 @@
 		fallbackLocale: 'en',
 		initialLocale: lang ? lang.split('-')[0] : 'en'
 	});
-	dictionary.set({ ro, en });
+	_setDictionary({}, {});
 </script>
+
+<svelte:head>
+	<link href="/prism/prism.css" rel="stylesheet" />
+	<!-- <script src="/prism/prism.js"></script> -->
+</svelte:head>
 
 <Header />
 {@render children()}

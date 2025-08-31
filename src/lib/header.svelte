@@ -3,11 +3,11 @@
 	import { onMount } from 'svelte';
 	import { locale, _ } from 'svelte-i18n';
 	import { get } from 'svelte/store';
-
+	const basePath = '';
 	const tabs = [
-		{ name: 'navigation.home', url: '/' },
-		{ name: 'navigation.blog', url: '/articles' },
-		{ name: 'navigation.projects', url: '/projects' }
+		{ name: 'navigation.home', url: `${basePath}/` },
+		{ name: 'navigation.blog', url: `${basePath}/articles` },
+		{ name: 'navigation.projects', url: `${basePath}/projects` }
 	];
 </script>
 

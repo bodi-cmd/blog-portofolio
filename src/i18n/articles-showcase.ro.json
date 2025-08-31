@@ -5,7 +5,7 @@
 		"title": "MacroKIKI",
 		"summary": "MacroKIKI este un o tastatura de mici dimensiuni, asemanatoare cu un numpad, care poate fi configurata sa ruleze orice comanda rapida sau chiar script. Poate fi programata cu ajutorul unei interfete grafice web, pentru a putea fi usor de utilizat.",
 		"github": "https://github.com/bodi-cmd/macro-kiki",
-		"article": "https://github.com/bodi-cmd/macro-kiki",
+		"article": "/articles/macro-kiki",
 		"image": "./renders/macro-kiki.webp",
 		"tags": ["C++", "JS", "3D Printing", "Embedded"],
 		"date": "June 2025"

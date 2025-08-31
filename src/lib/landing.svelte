@@ -35,9 +35,11 @@
 			</g>
 		</svg>
 		<div class="hero-actions">
-			<button
+			<a
+				target="_blank"
+				href="/Bogdan Barbu CV 2025.pdf"
 				class="cursor-pointer rounded-xl border-2 border-solid border-primary p-2 font-semibold text-primary hover:shadow-xl"
-				>{$_('resume.get')}</button
+				>{$_('resume.get')}</a
 			>
 			<a aria-label="github" target="_blank" href="https://github.com/bodi-cmd">
 				<svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">

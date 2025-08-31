@@ -18,9 +18,3 @@
 		{/each}
 	</div>
 </div>
-
-<style lang="scss">
-	.page {
-		padding-top: 64px;
-	}
-</style>

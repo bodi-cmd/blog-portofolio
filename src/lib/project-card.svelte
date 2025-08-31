@@ -51,7 +51,7 @@
 		<div class="bullets-row">
 			<div class="date">{$_('projects.used')}</div>
 			{#each project.tags as tag}
-				<div class="bullet text-primary">{tag}</div>
+				<div class="bullet font-bold">{tag}</div>
 			{/each}
 		</div>
 	</div>

@@ -11,6 +11,7 @@ export default {
 			},
 			colors: {
 				"primary": "#FF6A00",
+				"secondary": "#342e8a",
 				"structure-elements": "#0d0d0d",
 				"app-bg": "#11152e",
 				"text": "#e8e8e8",

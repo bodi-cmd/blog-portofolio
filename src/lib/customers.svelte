@@ -59,7 +59,7 @@
 
 			.bullet {
 				font-size: 1rem;
-				background-color: var(--primary);
+				background-color: var(--color-secondary);
 				text-align: center;
 				padding: 8px;
 				border-radius: 300px;
