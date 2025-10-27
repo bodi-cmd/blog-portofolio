@@ -1,1 +1,43 @@
-{}
+{
+	"macroKiki": {
+		"title": "Macro KIKI",
+		"subtitle": "automate any daily action",
+		"intro1": "My daily job routine starts with the following steps: turn on the laptop, enter the password, open Jira, Teams and Gitlab, enter other passwords, open multiple VSCode windows with projects and run applications. All these tasks can be automated with a simple press of a button using the Macro KIKI keyboard, which allows configuring an unlimited number of commands and scripts.",
+		"architecture": {
+			"title": "Planning",
+			"p1": "The first step was choosing the microcontroller. Having already experience with Arduino boards, I chose an Arduino Pro Micro, due to its HID device emulation functionality (it can behave like a mouse or keyboard without requiring additional software installed on the target device). We'll see later that this choice wasn't the best due to its limited memory size.",
+			"p2": "From the beginning, I wanted the device usage to be as user-friendly as possible and the appearance to be pleasant. Thus, I added an OLED screen for the graphical interface, an encoder for menu navigation, and 12 programmable buttons.",
+			"p3": "Another important criterion established from the start was the ability to reprogram the keys without requiring driver installation or a dedicated application. The solution was implementing a web platform accessible from the browser that generates a configuration file. This file can be copied to a microSD card and inserted into the keyboard. An important aspect is that all generation is done locally, so sensitive data, such as passwords, never leaves the computer.",
+			"p4": "In the following sections, I will present each aspect of the keyboard one by one."
+		},
+		"keypad": {
+			"title1": "Keypad",
+			"p1": "The first step was developing a dedicated library for the numpad, as existing libraries either consumed too much memory or didn't allow simultaneous reading of multiple keys.",
+			"p2": "After completing the library, integrating it into a project is easy, following the example below.",
+			"p3": "To efficiently use the microcontroller pins, I applied multiplexing, a suitable technique for matrix-arranged buttons. Thus, for a matrix with L rows and C columns, C pins are used as inputs and L pins as outputs (or vice versa). The microcontroller powers each column one at a time and reads the row values. The principle is illustrated in the following animation:",
+			"p4": "The implementation was slightly more complex because I wanted the buttons to be pressed simultaneously and to be able to read the order of pressing. Thus, I had to use a list to store the state of pressed buttons and a matrix to retain the state of all buttons at any moment.",
+			"p5": "To implement debouncing that doesn't block the thread and to avoid false values when reading pins, I read each signal 20 times and considered it LOW only if all readings were LOW. To avoid using pull-down resistors, I had to treat signals with inverse logic and activate the PULL_UP resistors integrated into the microcontroller.",
+			"p6": "The chosen buttons are mechanical keyboard switches, called Cherry MX Orange",
+			"p7": "To connect the buttons in rows and columns, I used uninsulated copper wires, which I separated with heat-shrink tubing to prevent rows from touching columns."
+		},
+		"software": {
+			"title": "Software",
+			"p1": "The software was challenging from the start due to the diversity of components. Arduino Pro Micro has only 2KB RAM and 32KB Flash. The microSD card library needs about 512B for the read buffer, so the rest of the code had to be as efficient as possible.",
+			"p2": "The smallest library for OLED display is U8Glib, but its usage is more complex because a frame is rendered in multiple cycles (to use a smaller buffer).",
+			"p3": "The graphical interface consists of 2 layers. The first layer displays the menu titles (profiles) that the user can select by rotating the encoder. If the encoder is pressed, the menu will move to the second layer, displaying the descriptions of each key.",
+			"p4": "By far, the most complex part of the project was designing the data structure that would feed the graphical interface. Having so little memory available, almost all texts and variables are loaded into RAM one at a time to use as little space as possible. To avoid sacrificing speed by searching for information on the card, the designed data structure uses direct addressing techniques (similar to arrays) for frequently read texts and addresses, as well as pointer-based addressing techniques (similar to linked lists) for variable-length information with less frequent access.",
+			"p5": "As shown in the image, the first byte of the file stores the number of available menus (N). A menu title can have 16 characters, so the next 16N bytes (green area) are for titles. We can directly address any title, knowing the size of a title and its offset. The next memory area (orange) is for key descriptions, for each menu in turn. The number of keys is fixed (12), so, like with titles, we can access any description directly based on the menu index and key index. The next memory area (yellow) is for macro script addresses. Because these scripts have variable size, I can't address them directly, but with these fixed-size pointers, I can jump directly to the offset where the script is located. Each address has 2B, and like descriptions, I have 12 keys * N menus. When using these pointers to reach the macro script area, the first 2 bytes of this area store the script length, so we know to stop reading before reaching the neighboring script.",
+			"p6": "To allow sending special keys like CTRL, SHIFT, or ENTER, I checked if the ASCII value of the character is greater than 0x80 and held the key pressed until receiving the value 0xFF. These values aren't random but are documented in the Keyboard.h library provided by Arduino. In the source code, you can see how from value 0x80, the keys are modifiers and special keys. For release, I used the value 0xFF because it's the highest and isn't used by any other key. To also introduce delay during commands, I used code 0xFE to mark a 200ms delay. This isn't variable, but the user can chain multiple delays for a longer effect."
+		},
+		"modeling": {
+			"title": "3D Modeling",
+			"p1": "Throughout the modeling process, the device had several design variants. Initially, the keys were arranged horizontally, but the square appearance didn't satisfy me, so I rearranged them vertically. The first versions didn't have space for the microSD card, so I had to remodel this feature. Even the keys are custom modeled to perfectly match the case's appearance.",
+			"p2": "The printer I use is a Bambu Lab Mini, with PLA filament. The settings are mostly default, with minor adjustments for part support.",
+			"p3": "For better contrast, I added a pause in the slicer at the last layers and changed the filament, thus managing to print with two colors."
+		},
+		"links": {
+			"title": "Links",
+			"p1": "The entire project is public and can be accessed on Github at the following links. If you liked it, don't hesitate to contact me for more information."
+		}
+	}
+}

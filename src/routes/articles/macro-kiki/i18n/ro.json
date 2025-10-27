@@ -1,19 +1,43 @@
 {
 	"macroKiki": {
 		"title": "Macro KIKI",
-		"subtitle": "automatizeaza orice actiune de zi cu zi",
+		"subtitle": "automatizează orice acțiune de zi cu zi",
 		"intro1": "Rutina mea zilnică la job începe cu următorii pași: pornesc laptopul, introduc parola, deschid Jira, Teams și Gitlab, introduc alte parole, deschid mai multe ferestre de VSCode cu proiectele și rulez aplicațiile. Toate aceste taskuri pot fi automatizate printr-o simplă apăsare de buton, cu ajutorul tastaturii Macro KIKI, care permite configurarea unui număr nelimitat de comenzi și scripturi.",
-    "architecture": {
-      "title": "Prezentare de ansamblu",
-      "p1": "Primul pas a fost alegerea microcontroller-ului. Având deja experiență cu plăcuțele Arduino, am ales un Arduino Pro Micro, datorită funcționalității de emulare a dispozitivelor HID (se poate comporta ca un mouse sau tastatură, fără a fi nevoie de software adițional instalat pe dispozitivul țintă). Vom vedea pe parcurs că această alegere nu a fost cea mai bună, din cauza dimensiunii scăzute a memoriei.",
-      "p2": "Încă de la început am dorit ca utilizarea dispozitivului să fie cât mai prietenoasă, iar aspectul cât mai plăcut. Astfel, am adăugat un ecran OLED pentru interfață grafică, un encoder pentru navigarea în meniu și 12 butoane programabile.",
-      "p3": "Un alt criteriu important stabilit încă de la început a fost posibilitatea de a reprograma tastele fără a fi nevoie de instalarea unor drivere sau a unei aplicații dedicate. Soluția a fost implementarea unei platforme web accesibilă din browser, care generează un fișier de configurare. Acest fișier poate fi copiat pe un card microSD și introdus în tastatură. Un aspect important este faptul că toată generarea se realizează local, astfel că datele sensibile, cum ar fi parolele, nu părăsesc computerul."
+		"architecture": {
+			"title": "Planificare",
+			"p1": "Primul pas a fost alegerea microcontroller-ului. Având deja experiență cu plăcuțele Arduino, am ales un Arduino Pro Micro, datorită funcționalității de emulare a dispozitivelor HID (se poate comporta ca un mouse sau tastatură, fără a fi nevoie de software adițional instalat pe dispozitivul țintă). Vom vedea pe parcurs că această alegere nu a fost cea mai bună, din cauza dimensiunii scăzute a memoriei.",
+			"p2": "Încă de la început am dorit ca utilizarea dispozitivului să fie cât mai prietenoasă, iar aspectul cât mai plăcut. Astfel, am adăugat un ecran OLED pentru interfață grafică, un encoder pentru navigarea în meniu și 12 butoane programabile.",
+			"p3": "Un alt criteriu important stabilit încă de la început a fost posibilitatea de a reprograma tastele fără a fi nevoie de instalarea unor drivere sau a unei aplicații dedicate. Soluția a fost implementarea unei platforme web accesibilă din browser, care generează un fișier de configurare. Acest fișier poate fi copiat pe un card microSD și introdus în tastatură. Un aspect important este faptul că toată generarea se realizează local, astfel că datele sensibile, cum ar fi parolele, nu părăsesc computerul.",
+			"p4": "În următoarele secțiuni, voi prezenta pe rând fiecare aspect al tastaturii."
 		},
-    "keypad": {
-      "title1": "Keypad",
-      "p1": "Primul pas a fost dezvoltarea unei biblioteci dedicate pentru numpad, deoarece bibliotecile existente fie consumau prea multă memorie, fie nu permiteau citirea simultană a mai multor taste.",
-      "p2": "După finalizarea bibliotecii, integrarea acesteia într-un proiect se realizează ușor, urmând exemplul de mai jos.",
-      "p3": "Pentru a utiliza eficient pinii microcontrollerului, am aplicat multiplexarea, o tehnică potrivită pentru butoane dispuse în matrice. Astfel, pentru o matrice cu L linii și C coloane, se folosesc C pini ca intrări și L pini ca ieșiri (sau invers). Microcontrollerul alimentează pe rând fiecare coloană și citește valorile liniilor. Principiul este ilustrat în animația următoare:"
-    }
+		"keypad": {
+			"title1": "Keypad",
+			"p1": "Primul pas a fost dezvoltarea unei biblioteci dedicate pentru numpad, deoarece bibliotecile existente fie consumau prea multă memorie, fie nu permiteau citirea simultană a mai multor taste.",
+			"p2": "După finalizarea bibliotecii, integrarea acesteia într-un proiect se realizează ușor, urmând exemplul de mai jos.",
+			"p3": "Pentru a utiliza eficient pinii microcontrollerului, am aplicat multiplexarea, o tehnică potrivită pentru butoane dispuse în matrice. Astfel, pentru o matrice cu L linii și C coloane, se folosesc C pini ca intrări și L pini ca ieșiri (sau invers). Microcontrollerul alimentează pe rând fiecare coloană și citește valorile liniilor. Principiul este ilustrat în animația următoare:",
+			"p4": "Implementarea a fost puțin mai complexă deoarece am dorit ca butoanele să poată fi apăsate simultan și să pot citi și ordinea apăsării. Astfel, am fost nevoit să folosesc o listă pentru a stoca starea butoanelor apăsate și o matrice pentru a putea reține starea tuturor butoanelor în oricare moment.",
+			"p5": "Pentru a putea face un debouncing care nu blochează thread-ul și pentru a nu avea valori false la citirea pinilor, am citit fiecare semnal de 20 de ori și l-am considerat LOW doar dacă toate citirile au fost LOW. Pentru a nu utiliza rezistori pull-down, am fost nevoit să tratez semnalele cu logică inversă și să activez rezistorii PULL_UP integrați în microcontroller.",
+			"p6": "Butoanele alese sunt de tastatură mecanică, numite Cherry MX Orange",
+			"p7": "Pentru a conecta butoanele pe linii și coloane, am folosit fire de cupru neizolate, pe care le-am separat cu tub termocontractabil, pentru a nu se atinge liniile de coloane."
+		},
+		"software": {
+			"title": "Software",
+			"p1": "Software-ul a fost o provocare încă de la început, din cauza diversității componentelor. Arduino Pro Micro dispune de doar 2KB RAM și 32KB Flash. Biblioteca de card microSD are nevoie de aproximativ 512B pentru buffer-ul de citire, astfel că restul codului a trebuit să fie cât mai eficient posibil.",
+			"p2": "Cea mai mică bibliotecă pentru display OLED este U8Glib, însă utilizarea ei este mai complexă, din cauză că un frame se randează în mai multe cicluri (pentru a utiliza un buffer cât mai mic).",
+			"p3": "Interfața grafică este compusă din 2 straturi. Primul strat afișează titlurile meniurilor (profilelor) pe care utilizatorul le poate selecta rotind encoderul. Dacă encoderul este apăsat, meniul va trece în stratul al doilea, afișând descrierile fiecărei taste.",
+			"p4": "Pe departe, cea mai complexă parte a proiectului a fost proiectarea structurii de date care va hrăni interfața grafică. Având la dispoziție atât de puțină memorie, aproape toate textele și variabilele sunt încărcate în RAM pe rând, pentru a utiliza cât mai puțin spațiu. Pentru a nu sacrifica viteza căutând după informații pe card, structura de date proiectată utilizează tehnici de adresare directă (similar cu array-urile) pentru textele căutate și adresele citite frecvent, dar și tehnici de adresare bazată pe pointeri (similar cu listele înlănțuite) pentru informații de lungime variabilă și cu acces mai rar.",
+			"p5": "După cum este prezentat și în imagine, primul byte din fișier stochează numărul de meniuri disponibile (N). Un titlu de meniu poate avea 16 caractere, astfel că următorii 16N bytes (zona verde) sunt pentru titluri. Putem adresa direct oricare titlu, știind dimensiunea unui titlu și offset-ul acestuia. Următoarea zonă de memorie (portocalie) este destinată descrierilor tastelor, pentru fiecare meniu pe rând. Numărul tastelor este fix (12), astfel că, la fel ca la titluri, putem accesa oricare descriere direct, în funcție de indexul meniului și indexul tastei. Următoarea zonă de memorie (galbenă) este destinată adreselor scripturilor macro. Pentru că aceste scripturi au dimensiune variabilă, nu le mai pot adresa direct, însă cu ajutorul acestor pointeri de dimensiune fixă, pot sări direct la offset-ul unde se află scriptul. Fiecare adresă are 2B, și la fel ca la descrieri, am 12 taste * N meniuri. Atunci când utilizăm acești pointeri să ajungem la zona cu scriptul macro, primii 2 bytes din această zonă stochează lungimea scriptului, pentru a ști să oprim citirea înainte să ajungem în scriptul vecin.",
+			"p6": "Pentru a permite trimiterea de taste speciale, cum ar fi CTRL, SHIFT sau ENTER, am verificat dacă valoarea ASCII a caracterului este mai mare de 0x80, și am ținut tasta apăsată până când am primit valoarea 0xFF. Aceste valori nu sunt aleatorii, ci sunt documentate în librăria Keyboard.h oferită de Arduino. În codul sursă se observă cum, de la valoarea 0x80, tastele sunt modifiers și taste speciale. Pentru release am utilizat valoarea 0xFF deoarece este cea mai mare și nu este utilizată de nicio altă tastă. Pentru a putea introduce și delay pe parcursul comenzilor, am utilizat codul 0xFE pentru a marca un delay de 200ms. Acesta nu este variabil, însă utilizatorul poate să înlănțuiască mai multe delay-uri pentru un efect mai lung."
+		},
+		"modeling": {
+			"title": "Modelare 3D",
+			"p1": "De-a lungul procesului de modelare, dispozitivul a avut mai multe variante de design. La inceput tastele au fost asezate orizontal, insa aspectul patrat nu m-a satisfacut, asa ca le-am reasezat vertical. Primele versiuni nu aveau loc pentru card microSD, asa ca a trebuit sa remodelez si aceasta trasatura. Inclusiv tastele sunt modelate custom, pentru a se potrivi perfect cu aspectul carcasei.",
+			"p2": "Imprimanta pe care o folosesc este un Bambu Lab Mini, cu filament PLA. Setarile sunt in mare parte cele implicite, cu mici ajustari pentru suportul pieselor.",
+			"p3": "Pentru un contrast mai bun, am adaugat pauza in slicer la ultimele layere, si am schimbat filamentul, astfel reusint sa printez cu doua culori."
+		},
+		"links": {
+			"title": "Linkuri",
+			"p1": "Intregul proiect este public si poate fi accesat pe Github la urmatoarele linkuri. Dacă ți-a plăcut, nu ezita să mă contactezi pentru mai multe informații."
+		}
 	}
 }

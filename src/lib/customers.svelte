@@ -1,11 +1,12 @@
 <script>
 	import { _ } from 'svelte-i18n';
+	import { base } from '$app/paths';
 </script>
 
 <div class="section">
 	<h1 class="title">{$_('customers.title')}</h1>
 	<div class="customer-row">
-		<img src="./cruze.png" alt="cruze logo" />
+		<img src="{base}/cruze.png" alt="cruze logo" />
 		<div class="description">
 			<p>{$_('customers.cruze.description')}</p>
 			<div class="bullets-row">
@@ -16,7 +17,7 @@
 		</div>
 	</div>
 	<div class="customer-row">
-		<img src="./biotweak.png" alt="biotweak logo" />
+		<img src="{base}/biotweak.png" alt="biotweak logo" />
 		<div class="description">
 			<p>{$_('customers.biotweak.description')}</p>
 			<div class="bullets-row">
@@ -27,7 +28,7 @@
 		</div>
 	</div>
 	<div class="customer-row">
-		<img src="./creative-motion.jpg" alt="creative motion logo" />
+		<img src="{base}/creative-motion.jpg" alt="creative motion logo" />
 		<div class="description">
 			<p>
 				<a href="https://creativemotion.io/">Creative Motion</a>
